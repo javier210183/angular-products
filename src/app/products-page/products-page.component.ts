@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductFilterPipe } from '../pipes/product-filter.pipe';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { ProductsService } from '../services/products.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'products-page',
@@ -24,11 +25,12 @@ export class ProductsPageComponent {
 
   products: Product[] = [];
   #productsService = inject(ProductsService);
-
+  #titleService = inject(Title);
   ngOnInit(): void {
     this.#productsService
       .getProducts()
       .subscribe((products) => (this.products = products));
+      this.#titleService.setTitle("Productos | Angular Products Nuevos");
   }
   showImage = true;
   toggleImage() {

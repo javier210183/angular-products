@@ -3,13 +3,14 @@ import { Product } from '../interfaces/product';
 import { CommonModule } from '@angular/common';
 import { StarRatingComponent } from "../star-rating/star-rating.component";
 import { ProductsService } from '../services/products.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'product-item',
     standalone: true,
     templateUrl: './product-item.component.html',
     styleUrls: ['./product-item.component.css'],
-    imports: [CommonModule, StarRatingComponent]
+    imports: [CommonModule, StarRatingComponent, RouterLink]
 })
 export class ProductItemComponent {
   @Input({required: true}) product!: Product; // required: true -> Obligatorio
