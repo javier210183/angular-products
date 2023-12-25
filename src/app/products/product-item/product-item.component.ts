@@ -1,7 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { Product } from '../interfaces/product';
 import { CommonModule } from '@angular/common';
-import { StarRatingComponent } from "../star-rating/star-rating.component";
+import { StarRatingComponent } from "../../star-rating/star-rating.component";
 import { ProductsService } from '../services/products.service';
 import { RouterLink } from '@angular/router';
 

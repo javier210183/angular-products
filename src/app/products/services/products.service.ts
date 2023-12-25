@@ -27,5 +27,12 @@ export class ProductsService {
       rating: rating,
     });
 }
+  
+  addProduct(product: Product): Observable<Product> {
+    return this.#http
+      .post<SingleProductResponse>(`${this.#productsUrl}`, product)
+      .pipe(map((resp) => resp.product));
+  }
+ 
 
 }
